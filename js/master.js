@@ -117,10 +117,10 @@ window.onscroll = function (e) {
 
 
 document.querySelectorAll(".images-box img").forEach(img => {
-        img.addEventListener('click', function (e) {
-            document.body.appendChild(createPopup(img.src));
-        })
+    img.addEventListener('click', function (e) {
+        document.body.appendChild(createPopup(img.src));
     })
+})
 function createPopup(url) {
     let imagePopup = document.createElement("div");
     let myImg = document.createElement("img");
@@ -132,3 +132,13 @@ function createPopup(url) {
     }
     return imagePopup;
 }
+
+let liIcons = document.querySelectorAll("ul.tooltip li");
+liIcons.forEach((li) => {
+    li.addEventListener("click", function (e) {
+        document.querySelector(`.${li.dataset.section}`).scrollIntoView({
+            behavior: "smooth"
+        })
+    })
+})
+
