@@ -2,6 +2,9 @@
   --main-color: #ffa722;
 
   --main-transition: 0.2s;
+
+  scroll-behavior: smooth;
+
 }
 * {
   font-family: "Roboto", sans-serif;
@@ -24,14 +27,18 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.126);
 }
 .setting-box {
+  padding: .5rem;
   position: fixed;
   top: 0;
-  left: -200px;
-  width: 200px;
+  left: -225px;
+  width: 225px;
   z-index: 999;
   background-color: #fff;
   min-height: 100vh;
   transition: var(--main-transition, 0.25s);
+}
+.setting-box  * {
+  border-radius: .25rem;
 }
 .setting-box .toggle-setting {
   position: absolute;
@@ -89,7 +96,7 @@ section {
 }
 
 .setting-box .option-box ul.colors-list li:first-child {
-  background-color: #ff5722;
+  background-color: #ffa722;
 }
 .setting-box .option-box ul.colors-list li:nth-child(2) {
   background-color: #00897b;
@@ -106,14 +113,15 @@ section {
 .setting-box .option-box ul.colors-list li:last-child {
   background-color: #3f51b5;
 }
-.setting-box .background-options {
+.setting-box .background-options,
+.bullets-options {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.setting-box .background-options span.yes,
-.setting-box .background-options span.no {
+.setting-box div span.yes,
+.setting-box div span.no {
   cursor: pointer;
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -125,8 +133,8 @@ section {
   margin: 0;
   opacity: 0.5;
 }
-.setting-box .background-options span.active,
-.setting-box .background-options span:hover {
+.setting-box div span.active,
+.setting-box div span:hover {
   opacity: 1;
 }
 /* Section End settings box */
@@ -529,4 +537,15 @@ ul.tooltip {
 }
 .tooltip li:hover > div {
   display: block;
+}
+
+.rest-options {
+  width: 100%;
+  padding: 1rem .25rem;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #e53935;
+  cursor: pointer;
 }

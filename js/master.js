@@ -16,7 +16,6 @@ gearIcon.addEventListener("click", function (e) {
     this.classList.toggle("fa-spin");
     settingBox.classList.toggle("opened");
 })
-aboutImage.src = `imgs/about-icons/${(localStorage.mainColor).slice(1)}.png`;
 
 // ! Colors Settings
 if (localStorage.mainColor) {
@@ -30,14 +29,12 @@ if (localStorage.mainColor) {
 }
 else
     localStorage.mainColor = "#ffa722";
+aboutImage.src = `imgs/about-icons/${(localStorage.mainColor).slice(1)}.png`;
 
 // Colors Setting
 colorsLi.forEach((li) => {
     li.addEventListener('click', (e) => {
-        colorsLi.forEach((e) => {
-            e.classList.remove("active");
-        });
-        li.classList.add("active");
+        handelActive(e);
         document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
         localStorage.mainColor = e.target.dataset.color;
         aboutImage.src = `imgs/about-icons/${(localStorage.mainColor).slice(1)}.png`;
@@ -70,11 +67,7 @@ else
 
 randomBG.forEach(span => {
     span.addEventListener("click", (e) => {
-        randomBG.forEach(span => {
-            span.classList.remove("active");
-        })
-        span.classList.add("active");
-
+        handelActive(e);
         if (span.dataset.background === "yes")
             randomInterval();
         else
@@ -142,3 +135,50 @@ liIcons.forEach((li) => {
     })
 })
 
+
+function handelActive(e) {
+    e.target.parentElement.querySelectorAll(".active").forEach(element => {
+        element.classList.remove("active");
+    })
+    e.target.classList.add("active");
+
+}
+
+let bullets = document.querySelector(".tooltip");
+let bulletsOption = document.querySelectorAll(".bullets-options > span");
+if (localStorage.showBullets) {
+    bulletsOption.forEach(span => {
+        span.classList.remove("active");
+    });
+    bullets.style.display = localStorage.showBullets;
+
+    if (localStorage.showBullets === "flex")
+        document.querySelector(".bullets-options .yes").classList.add("active");
+    else
+        document.querySelector(".bullets-options .no").classList.add("active");
+
+
+}
+bulletsOption.forEach(span => {
+    span.addEventListener('click', function (e) {
+        if (span.dataset.bullets === "no") {
+            bullets.style.display = "none";
+            localStorage.showBullets = "none";
+        }
+        else {
+            bullets.style.display = "flex";
+            localStorage.showBullets = "flex";
+        }
+        handelActive(e);
+    })
+
+})
+
+document.querySelector(".rest-options").addEventListener('click', function (e) {
+    localStorage.removeItem("bgImageIndex")
+    localStorage.removeItem("mainColor")
+    localStorage.removeItem("randomBackground")
+    localStorage.removeItem("showBullets")
+
+    window.location.reload();
+})

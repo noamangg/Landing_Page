@@ -34,6 +34,7 @@
                     <li data-color="#3f51b5"></li>
                 </ul>
             </div>
+
             <div class="option-box">
                 <h4>Random Backgrounds</h4>
                 <div class="background-options">
@@ -41,6 +42,14 @@
                     <span class="no" data-background="no">No</span>
                 </div>
             </div>
+            <div class="option-box">
+                <h4>Show Bullets</h4>
+                <div class="bullets-options">
+                    <span class="yes active" data-bullets="yes">Yes</span>
+                    <span class="no" data-bullets="no">No</span>
+                </div>
+            </div>
+            <button class="rest-options">Rest Options</button>
         </div>
     </div>
     <ul class="tooltip">
@@ -66,10 +75,10 @@
             <div class="logo">Special Design</div>
             <nav>
                 <ul class="links">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#about-us-container">About</a></li>
+                    <li><a href="#skills-container">Skills</a></li>
+                    <li><a href="#gallery-container">Products</a></li>
+                    <li><a href="#">Timeline</a></li>
                 </ul>
             </nav>
         </header>
@@ -82,7 +91,7 @@
     <!-- End Landing Page -->
 
     <!-- Start About Us -->
-    <section class="container about-us-container">
+    <section class="container about-us-container" id="about-us-container">
         <div class="about-us">
             <div class="image-box">
                 <img id="about-image" src="imgs/about-icons/ffa722.png" alt="about us">
@@ -99,7 +108,7 @@
     </section>
     <!-- End About Us -->
     <!-- Start Skills -->
-    <section class="container skills-container">
+    <section class="container skills-container" id="skills-container">
         <div class="skills">
             <h2>Our Skills</h2>
             <div class="skills-box">
@@ -121,7 +130,7 @@
     <!-- End Skills -->
 
     <!-- Start Gallery and timeline -->
-    <section class="container gallery-container">
+    <section class="container gallery-container" id="gallery-container">
         <h2>Our Gallery</h2>
         <div class="images-box">
             <img src="imgs/01.jpg" alt="img">
@@ -132,7 +141,7 @@
         </div>
     </section>
 
-    <section class="container timeline-container">
+    <section class="container timeline-container" id="timeline-container">
         <h2>Timeline</h2>
         <div class="timeline">
             <div class="content">
