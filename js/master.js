@@ -182,3 +182,14 @@ document.querySelector(".rest-options").addEventListener('click', function (e) {
 
     window.location.reload();
 })
+
+
+// Menu button
+
+let menuIcon = document.querySelector("span.menu");
+let links = document.querySelector("ul.links");
+menuIcon.addEventListener("click", function(e) {
+    links.classList.toggle("open");
+})
+
+
