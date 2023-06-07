@@ -662,3 +662,25 @@ form.about-us-form  .row-tow input {
     flex-direction: column;
   }
 }
+
+
+footer {
+  background-color: #333;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  margin-top: 4rem;
+}
+footer p {
+  margin: 0;
+}
+
+footer p a {
+  text-decoration: none;
+  transition: .2s;
+  color: white;
+}
+
+footer p a:hover {
+  color: var(--main-color, #00897b);
+}
